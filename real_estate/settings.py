@@ -1,6 +1,7 @@
 import os
 from pathlib import Path
 import environ
+from django.conf.global_settings import LOGIN_URL, LOGIN_REDIRECT_URL, LOGOUT_REDIRECT_URL
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -83,3 +84,8 @@ STATICFILES_DIRS = [BASE_DIR / 'static']
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
+
+LOGIN_URL = 'login'
+LOGIN_REDIRECT_URL = 'index'
+LOGOUT_REDIRECT_URL = 'login'
+

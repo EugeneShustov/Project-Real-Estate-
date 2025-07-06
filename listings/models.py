@@ -30,5 +30,12 @@ class YourModel(models.Model):
     description = models.TextField()
     city = models.CharField(max_length=50)
 
+class Comment(models.Model):
+    listing = models.ForeignKey(Listing, on_delete=models.CASCADE, related_name='comments')
+    name = models.CharField(max_length=100)
+    email = models.EmailField()
+    message = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+
     def __str__(self):
-        return self.title
+        return f"Комментарий от {self.name} к {self.listing.title}"

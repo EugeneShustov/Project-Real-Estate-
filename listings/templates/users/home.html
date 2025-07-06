@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block title %}Главная{% endblock %}
+{% block content %}
+  <div class="container mt-4">
+    <h2 class="mb-4">Добро пожаловать, {{ user.username }}!</h2>
+
+    {% if listings %}
+      <div class="row">
+        {% for item in listings %}
+          <div class="col-md-4 mb-4">
+            <div class="card h-100">
+              <div class="card-body">
+                <h5 class="card-title">{{ item.title }}</h5>
+                <p class="card-text">{{ item.description|truncatewords:20 }}</p>
+                <p class="card-text"><strong>Цена:</strong> {{ item.price }}</p>
+                <p class="card-text"><strong>Город:</strong> {{ item.city }}</p>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    {% else %}
+      <p>Нет доступных объектов.</p>
+    {% endif %}
+  </div>
+{% endblock %}
