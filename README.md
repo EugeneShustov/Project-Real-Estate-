@@ -37,27 +37,20 @@ Project Real Estate is a user-friendly website for viewing cards of real estate 
 Features:
 
 Listing page: cards with photos, descriptions, prices, and square footage
-
 Sections “Premium Offers” and “Available Listings”
-
 Image storage (media)
-
 Registration and authentication
-
 Contact forms
-
 Card layout with vertical alignment
-
 Responsive CSS: Flexbox, gradient backgrounds, spacing
 
 Technologies Used:
 
-Component	Technology
-Backend	Django
-Frontend	HTML5, CSS3
-Styling	Flexbox, Gradient UI
-Media Storage	media
-Database	PostgreSQL
-
+Component: Technology
+Backend:	Django
+Frontend:	HTML5, CSS3
+Styling:	Flexbox, Gradient UI
+Media: Storage	media
+Database:	PostgreSQL
 
 Author: Eugene Shustov (Евгений Шустов)
