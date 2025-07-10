@@ -1,7 +1,6 @@
 import os
 from pathlib import Path
 import environ
-from django.conf.global_settings import LOGIN_URL, LOGIN_REDIRECT_URL, LOGOUT_REDIRECT_URL
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -23,6 +22,7 @@ INSTALLED_APPS = [
 ]
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+ROOT_URLCONF = 'real_estate.urls'
 WSGI_APPLICATION = 'real_estate.wsgi.application'
 
 MIDDLEWARE = [
@@ -34,8 +34,6 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-
-ROOT_URLCONF = 'real_estate.urls'
 
 TEMPLATES = [
     {
@@ -52,8 +50,6 @@ TEMPLATES = [
         },
     },
 ]
-
-WSGI_APPLICATION = 'real_estate.wsgi.application'
 
 DATABASES = {
     'default': {

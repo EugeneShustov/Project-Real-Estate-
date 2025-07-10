@@ -26,8 +26,6 @@ def search(request):
         'query': query }
                   )
 
-    return render(request, 'listings/search.html', {'listings': results, 'query': query})
-
 def listing_detail(request, pk):
     listing = get_object_or_404(Listing, pk=pk)
     comments = listing.comments.all()

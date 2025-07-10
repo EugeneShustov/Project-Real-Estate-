@@ -11,15 +11,19 @@
 </form>
 
 <div class="apartments">
+  {% if listings %}
     {% for apartment in listings %}
-        <div class="apartment">
-            <img src="{% static 'images/apartmens1.jpg' %}" alt="{{ apartment.title }}">
-            <h3>{{ apartment.title }}</h3>
-            <p>{{ apartment.rooms }} комнат(ы), {{ apartment.area }} м²</p>
-            <p class="price">{{ apartment.price }} $</p>
+      <div class="apartment">
+        <img src="{% if apartment.image %}{{ apartment.image.url }}{% else %}{% static 'images/apartment1.jpg' %}{% endif %}" alt="{{ apartment.title }}">
+        <h3>{{ apartment.title }}</h3>
+        <div class="apartment-info-row">
+          <span class="description">{{ apartment.rooms }} комн. • {{ apartment.area }} м²</span>
+          <span class="price">{{ apartment.price }} $</span>
         </div>
-    {% empty %}
-        <p>Ничего не найдено"{{ query }}".</p>
+      </div>
     {% endfor %}
+  {% else %}
+    <p class="no-results">Ничего не найдено по запросу "{{ query }}".</p>
+  {% endif %}
 </div>
 {% endblock %}

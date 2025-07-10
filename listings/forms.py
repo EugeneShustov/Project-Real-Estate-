@@ -6,12 +6,12 @@ from .models import Comment
 class SignUpForm(UserCreationForm):
     email = forms.EmailField(required=True)
 
-    class Meta:
-        model = User
-        fields = ['username', 'email', 'password1', 'password2']
+class Meta:
+    model = User
+    fields = ['username', 'email', 'password1', 'password2']
 
 class CommentForm(forms.ModelForm):
-    class Meta:
-        model = Comment
-        fields = ['message']
+ class Meta:
+    model = Comment
+    fields = ['message']
 
